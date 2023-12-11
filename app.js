@@ -41,7 +41,7 @@ app.post("/api/pronounce", (req, res) => {
 
 
 app.post('/api/process', upload.single('audio'), async (req, res) => {
-
+  console.log('request', req.file.buffer);
   const oggBuffer = req.file.buffer;
   
   const rec = new vosk.Recognizer({
