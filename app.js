@@ -50,7 +50,7 @@ app.post('/api/process', upload.single('audio'), async (req, res) => {
   });
   rec.setMaxAlternatives(0);
   rec.setWords(true);
-
+  console.log('Final result:', rec.finalResult(rec));
   const done = rec.acceptWaveform(oggBuffer);  
   res.json(rec.finalResult(rec));
   rec.free();
